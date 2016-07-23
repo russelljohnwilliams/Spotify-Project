@@ -4,6 +4,12 @@
 
 // console.log("outter", state.spotifySearch)
 
+// var song
+
+var play = {
+  song: null
+}
+
 window.onload = function(){
   main()
 };
@@ -15,8 +21,12 @@ var main = function() {
   var form = document.getElementById( 'search' );
   form.onsubmit = handleSubmit;
 
+  // var playButton = document.getElementById( 'play' );
+
   var btn = document.getElementById('playMusic');
-  btn.onclick = handleClick;
+  btn.onclick = playAudio;
+
+
 };
 
 var handleClick = function() {
@@ -77,12 +87,27 @@ var searchForSong = function(songSearch){
     if(request1.status === 200) {
       var singles = JSON.parse(request1.responseText)
       console.log(singles)
-      song = singles.tracks.items[0].preview_url
-      console.log("this time?", song)
-
+      play.song = singles.tracks.items[0].preview_url
+      // console.log("inner song?", song)
+      // var a = new Audio(song);
+      // a.play();
+      // console.log('a', a)
     }
   };
   request1.send(null)
 };
 
+// console.log('outer', song) 
 
+// playButton.onclick = function(song){
+//   console.log("onclick song", song)
+//       var a = new Audio(song);
+//       a.play();
+// }
+
+
+playAudio = function(){
+  console.log('clicked', play.song)
+  var a = new Audio(play.song);
+  a.play();
+}
