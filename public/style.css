@@ -1,0 +1,21 @@
+
+body {
+  margin: 0;
+}
+
+canvas {
+  border: 3px solid black;
+}
+
+canvas{
+  border: 1px 
+  solid #bbb;
+}
+
+.subdiv{
+  width: 320px;
+}
+
+.text{
+  margin: auto; width: 290px;
+}
