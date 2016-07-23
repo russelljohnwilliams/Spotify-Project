@@ -25,8 +25,8 @@ var main = function() {
   var btn = document.getElementById('pauseMusic');
   btn.onclick = pauseAudio;
 
-  var btn = document.getElementById('nextSong');
-  btn.onclick = nextButton;
+  // var btn = document.getElementById('nextSong');
+  // btn.onclick = nextButton;
 
   // drawing()
   // init() 
@@ -67,34 +67,14 @@ var searchAlbums = function(spotifySearch){
   request1.onload = function(){
     if(request1.status === 200) {
       state.singles = JSON.parse(request1.responseText)
-      // dropDownList()
-      displaySong()
+      dropDownList()
+      // displaySong()
     }
   };
   request1.send(null)
 };
 
-var displaySong = function(x){
-  i = 0
-  // i += x
-  var p = document.getElementById('song')
-  var opt = document.createElement('option')
-  opt.innerHTML = state.singles.items[i].name
-  p.appendChild(opt)
-  var song = state.singles.items[i].href
-  // console.log("what's this", song)
-  findSong(song)
-  // selectSong(i)
-  document.getElementById("pic").innerHTML = '<img class="background" src=' + state.singles.items[i].images[1].url + '>';
-}
 
-var nextButton = function(){
-  audio.pause()
-  var x 
-  x += 1
-  var song = state.singles.items[x].href
-  findSong(song)
-}
 
 var dropDownList = function(){
   var select = document.getElementById('songList');
@@ -125,15 +105,15 @@ var findSong = function(songSearch){
 };
 
 
-// var selectSong = function(){
-//   // var i = 0
-//   // i = i
-//   // i =+ x
-//   // var index = document.getElementById('songList').value;
-//   var song = state.singles.items[i].href
-//   console.log("what's this", song)
-//   findSong(song)
-// }
+var selectSong = function(){
+  // var i = 0
+  // i = i
+  // i =+ x
+  var index = document.getElementById('songList').value;
+  var song = state.singles.items[index].href
+  // console.log("what's this", song)
+  findSong(song)
+}
 
 // var a = new Audio(play.song);
 
@@ -145,6 +125,31 @@ var playAudio = function(){
 var pauseAudio = function(){
   audio.pause();
 }
+
+
+// var displaySong = function(x){
+//   i = 0
+//   // i += x
+//   var p = document.getElementById('song')
+//   var opt = document.createElement('option')
+//   opt.innerHTML = state.singles.items[i].name
+//   p.appendChild(opt)
+//   var song = state.singles.items[i].href
+//   // console.log("what's this", song)
+//   findSong(song)
+//   // selectSong(i)
+//   document.getElementById("pic").innerHTML = '<img class="background" src=' + state.singles.items[i].images[1].url + '>';
+// }
+
+// var nextButton = function(){
+//   audio.pause()
+//   var x = 0
+//   x += 1
+//   var song = state.singles.items[x].href
+//   findSong(song)
+// }
+
+
 
  //  // ---------------------------------
 
