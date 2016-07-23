@@ -14,6 +14,9 @@ var main = function() {
 
   var form = document.getElementById( 'search' );
   form.onsubmit = handleSubmit;
+
+  var btn = document.getElementById('playMusic');
+  btn.onclick = handleClick;
 };
 
 var handleClick = function() {
@@ -38,36 +41,48 @@ var searchSpotify = function(userInput) {
     if (request.status === 200){
       var jsonString = request.responseText;
       spotifySearch = JSON.parse( jsonString );
-      // console.log(url)
-      // displayOptions( query );
       searchAlbums(spotifySearch)
+      console.log('spotifySearch', spotifySearch)
     };
-    // console.log("inner", spotifySearch.artists.items[0].href)
   };
   request.send( null );
 
 };
 
-
 var searchAlbums = function(spotifySearch){
+
   var artist = spotifySearch.artists.items[0].href;
+
   var url = artist + "/albums?album_type=single";
-  var request = new XMLHttpRequest();
-  request.open("GET", url);
-  request.onload = function(){
-    if (request.status === 200){
-      var jsonString = request.responseText;
-      albumSearch = JSON.parse( jsonString );
-      console.log('albums', albumSearch)
+  var request1 = new XMLHttpRequest();
+  request1.open("GET", url);
+  request1.onload = function(){
+    if(request1.status === 200) {
+      var singles = JSON.parse(request1.responseText)
+      console.log(singles)
+      var x = singles.items[0].href
+      console.log("that time?", x)
+      searchForSong(x)
+    }
+  };
+  request1.send(null)
+};
+
+
+var searchForSong = function(songSearch){
+  var url = songSearch;
+  var request1 = new XMLHttpRequest();
+  request1.open("GET", url);
+  request1.onload = function(){
+    if(request1.status === 200) {
+      var singles = JSON.parse(request1.responseText)
+      console.log(singles)
+      song = singles.tracks.items[0].preview_url
+      console.log("this time?", song)
 
     }
-  }
-  request.send( null ); 
-}
-
-
-
-
-
+  };
+  request1.send(null)
+};
 
 
