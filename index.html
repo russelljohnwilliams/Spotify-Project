@@ -3,31 +3,43 @@
 <head>
   <title>Spotify!</title>
   <script src='index.js'></script>
+  <link rel="stylesheet" href="/style.css">
 </head>
 <body>
+<section1>
   <form id='search'>
     <input type="text" id="search-input" size="40" placeholder="search spotify">
     <input type="button" id="searchSpotify" value="search">
+        <select  id="songList" onchange="selectSong()">
+        </select>
+        <p id="song"></p>
+      </div>
+      <hr>
+    </form>
+    <div id="playButton">
+     <button id="playMusic">play</button>
+     <button id="pauseMusic">pause</button>
     <hr>
-    <div id="pic"></div>
+
+    <div id="pics" class="left">
+      <p id="pic"></p>
+      <p id="albumPic"></p></div>
+      <div id="similarArtists" class="right">
+      </div>
+    </header>
+    </section1>
+    <section2>
     <div id="results">
 
-      <select  id="songList" onchange="selectSong()">
-      </select>
-      <p id="song"></p>
-    </div>
-    <hr>
-  </form>
-  <div id="playButton">
-   <button id="playMusic">play</button>
-   <button id="pauseMusic">pause</button>
+      
    <!-- <button id="nextSong">next</button> -->
-<hr>
-<div align="center">
-
-<canvas id='main' width='600' height='400'></canvas>
+   <hr>
    <div align="center">
-    </div><br>
+
+<!-- <canvas id='main' width='600' height='400'></canvas>
+   <div align="center">
+   </div><br> -->
  </div>
+ </section2>
 </body>
 </html>

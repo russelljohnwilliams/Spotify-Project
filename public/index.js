@@ -1,18 +1,9 @@
-// var play = {
-//   audio: null
-// }
-
-var audio = new Audio()
-
-var state = {
-  singles: null
-}
-
 window.onload = function(){
   main()
 };
 
 var main = function() {
+
   var btn = document.getElementById('searchSpotify');
   btn.onclick = handleClick;
 
@@ -24,19 +15,11 @@ var main = function() {
 
   var btn = document.getElementById('pauseMusic');
   btn.onclick = pauseAudio;
-
-  // var btn = document.getElementById('nextSong');
-  // btn.onclick = nextButton;
-
-  // drawing()
-  // init() 
-
 };
 
 var handleClick = function() {
   var searchedItem = document.getElementById( 'search-input' )
   var userInput = searchedItem.value;
-  // searchedItem.value = '';
   searchSpotify(userInput)
 };
 
@@ -53,6 +36,7 @@ var searchSpotify = function(userInput) {
     if (request.status === 200){
       var jsonString = request.responseText;
       spotifySearch = JSON.parse( jsonString );
+      choice.artist = spotifySearch.artists.items[0];
       searchAlbums(spotifySearch)
     };
   };
@@ -61,33 +45,17 @@ var searchSpotify = function(userInput) {
 
 var searchAlbums = function(spotifySearch){
   var artist = spotifySearch.artists.items[0].href;
-  var url = artist + "/albums?album_type=single";
+  var url = artist + "/albums?album_type=album";
   var request1 = new XMLHttpRequest();
   request1.open("GET", url);
   request1.onload = function(){
     if(request1.status === 200) {
-      state.singles = JSON.parse(request1.responseText)
-      dropDownList()
-      // displaySong()
+      state.album = JSON.parse(request1.responseText)
+      findArtist()
     }
   };
   request1.send(null)
 };
-
-
-
-var dropDownList = function(){
-  var select = document.getElementById('songList');
-  for ( var i = 0; i < state.singles.items.length; i++ ){
-    var opt = document.createElement('option')
-    console.log("find name", state.singles.items[i].images[1].url)
-    opt.innerHTML = state.singles.items[i].name;
-    opt.value = i;
-    select.appendChild(opt)
-    document.getElementById("pic").innerHTML = '<img class="background" src=' + state.singles.items[i].images[1].url + '>';
-    // imageToShow = state.singles.items[i].images[1].url;
-  }
-}
 
 var findSong = function(songSearch){
   var url = songSearch;
@@ -96,26 +64,53 @@ var findSong = function(songSearch){
   request1.onload = function(){
     if(request1.status === 200) {
       var singles = JSON.parse(request1.responseText)
-      // console.log("whaaaaat", singles.tracks.items[0].preview_url)
       var song = singles.tracks.items[0].preview_url
-       audio = new Audio(song);
+      audio = new Audio(song);
     }
   };
   request1.send(null)
 };
 
-
-var selectSong = function(){
-  // var i = 0
-  // i = i
-  // i =+ x
-  var index = document.getElementById('songList').value;
-  var song = state.singles.items[index].href
-  // console.log("what's this", song)
-  findSong(song)
+var findArtist = function(){
+  var select = document.getElementById('songList');
+  for ( var i = 0; i < state.album.items.length; i++ ){
+    var opt = document.createElement('option')
+    opt.innerHTML = state.album.items[i].name;
+    opt.value = i;
+    select.appendChild(opt)
+    setArtistPic()
+    setSimilarArtists()
+   }
 }
 
-// var a = new Audio(play.song);
+var selectSong = function(){
+  var index = document.getElementById('songList').value;
+  var song = state.album.items[index].href
+  findSong(song)
+  setAlbumPic(index)
+}
+
+var setArtistPic = function(){
+  document.getElementById("pic").innerHTML = '<img class="picture" src=' + choice.artist.images[1].url + '>';
+}
+
+var setAlbumPic = function(index){
+  document.getElementById("albumPic").innerHTML = '<img class="picture" src=' + state.album.items[index].images[1].url + '>';
+}
+
+var setSimilarArtists = function(index){
+  document.getElementById("similarArtists").innerHTML = "hello"
+}
+
+var audio = new Audio()
+
+var choice = {
+  artist: null
+}
+
+var state = {
+  album: null,
+}
 
 var playAudio = function(){
   console.log(audio)
@@ -127,27 +122,22 @@ var pauseAudio = function(){
 }
 
 
-// var displaySong = function(x){
-//   i = 0
-//   // i += x
-//   var p = document.getElementById('song')
-//   var opt = document.createElement('option')
-//   opt.innerHTML = state.singles.items[i].name
-//   p.appendChild(opt)
-//   var song = state.singles.items[i].href
-//   // console.log("what's this", song)
-//   findSong(song)
-//   // selectSong(i)
-//   document.getElementById("pic").innerHTML = '<img class="background" src=' + state.singles.items[i].images[1].url + '>';
-// }
 
-// var nextButton = function(){
-//   audio.pause()
-//   var x = 0
-//   x += 1
-//   var song = state.singles.items[x].href
-//   findSong(song)
-// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -156,7 +146,6 @@ var pauseAudio = function(){
 //   var drawing = function(imageToShow){
 
 //   var canvas = document.getElementById( 'main' );
-//   console.log( 'canvas', canvas );
 //   var context = canvas.getContext( '2d' );
 //   context.fillStyle = 'grey'
 //   context.fillRect( 10, 10, 580, 380 );
@@ -191,7 +180,7 @@ var pauseAudio = function(){
 //    if (step > steps)
 //        var t = setTimeout('RunTextLeftToRight()', delay);
 // }
-     
+
 
  // context.beginPath();
  // context.moveTo(100, 100);
@@ -200,7 +189,7 @@ var pauseAudio = function(){
 
 
 
-  
+
 
  //  // ---------------------------------
 

@@ -1,4 +1,4 @@
-
+/*
 body {
   margin: 0;
 }
@@ -10,12 +10,58 @@ canvas {
 canvas{
   border: 1px 
   solid #bbb;
+}*/
+
+/* =============================
+
+ Main
+
+ ============================= */
+
+section{
+  padding: 400px;
+  min-width: 100%
 }
 
-.subdiv{
-  width: 320px;
+img{
+  height: 150px;
+  width: 150px; 
+  margin: 0;
 }
 
-.text{
-  margin: auto; width: 290px;
+p { 
+  max-height:175px;
+  max-width: 175px;
+  margin: 0;
+  display: inline;
+}
+
+
+/* =============================
+
+ Floated Columns 
+
+ ============================= */
+
+.left {
+  float: left;
+  width: 35%;
+
+}
+
+.right {
+  float: right;
+  width: 65%;
+}
+
+/* =============================
+
+Float Clearfix 
+
+============================= */
+
+.group:after {
+  content: "";
+  display: table;
+  clear: both;
 }
