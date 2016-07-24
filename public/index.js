@@ -16,6 +16,11 @@ var main = function() {
   var btn = document.getElementById('pauseMusic');
   btn.onclick = pauseAudio;
 
+  var select = document.getElementById('songList');
+  select.onchange = selectAlbum;
+
+  var select = document.getElementById('trackList');
+  select.onchange = createTrack
 
 };
 
@@ -23,6 +28,7 @@ var handleClick = function() {
   var searchedItem = document.getElementById( 'search-input' )
   var userInput = searchedItem.value;
   searchArtists(userInput)
+  searchedItem.value = '';
 };
 
 var handleSubmit = function( event ){
@@ -69,8 +75,6 @@ var getSongs = function(albums){
       var albumInfo = JSON.parse(request1.responseText)
       album.tracks = albumInfo.tracks.items;
       generateTrackList(albumInfo);
-  // console.log("sing song", song)
-      // audio = new Audio(song);
     }
   };
   request1.send(null)
@@ -83,54 +87,55 @@ var relatedArtists = function(artistSearch){
   request3.onload = function(){
     if(request3.status === 200) {
       var relatedArtists = JSON.parse(request3.responseText)
-        setRelatedArtists(relatedArtists)
-      }
-    };
-    request3.send()
-  };
-
-  var findArtist = function(){
-    var select = document.getElementById('songList');
-    for ( var i = 0; i < state.albums.items.length; i++ ){
-      var opt = document.createElement('option')
-      opt.innerHTML = state.albums.items[i].name;
-      opt.value = i;
-      select.appendChild(opt)
-      setArtistPic()
+      setRelatedArtists(relatedArtists)
     }
-  }
+  };
+  request3.send()
+};
 
-  var selectAlbum = function(){
-    var index = document.getElementById('songList').value;
-    var album = state.albums.items[index].href
-    getSongs(album)
-    setAlbumPic(index, album)
+var findArtist = function(){
+  document.getElementById("songList").options.length = 0;
+  var select = document.getElementById('songList');
+  for ( var i = 0; i < state.albums.items.length; i++ ){
+    var opt = document.createElement('option')
+    opt.innerHTML = state.albums.items[i].name;
+    opt.value = i;
+    select.appendChild(opt)
+    setArtistPic()
   }
+}
 
-  var setArtistPic = function(){
-    document.getElementById("pic").innerHTML = "<h1>"
-    + choice.artist.name + "</h1>" +'<img class="picture" src=' + choice.artist.images[1].url + '>';
-  }
+var selectAlbum = function(){
+  var index = document.getElementById('songList').value;
+  var album = state.albums.items[index].href
+  getSongs(album)
+  setAlbumPic(index, album)
+}
 
-  var setAlbumPic = function(index, album){
-    document.getElementById("albumPic").innerHTML = '<img class="picture" src=' + state.albums.items[index].images[1].url + '>';
-  }
+var setArtistPic = function(){
+  document.getElementById("pic").innerHTML = "<h1>"
+  + choice.artist.name + "</h1>" +'<img class="picture" src=' + choice.artist.images[1].url + '>';
+}
+
+var setAlbumPic = function(index, album){
+  document.getElementById("albumPic").innerHTML = '<img class="picture" src=' + state.albums.items[index].images[1].url + '>';
+}
 
 var setRelatedArtists = function(related){
   document.getElementById("similarArtists").innerHTML = "<h3>" 
   + "Related Artists" + "</h3>"
   for (var i in related.artists)
-  document.getElementById("similarArtists").innerHTML  += related.artists[i].name + "<br>" 
-  }
+    document.getElementById("similarArtists").innerHTML  += related.artists[i].name + "<br>" 
+}
 
 var generateTrackList = function(albumInfo){
   document.getElementById("albumTitle").innerHTML = "<h3>" 
   + albumInfo.name + "</h3>"
+  document.getElementById("trackList").options.length = 0;
   var select = document.getElementById('trackList');
   for ( var i = 0; i < album.tracks.length; i++ ){
     var opt = document.createElement('option')
     song = album.tracks[i].name;
-    document.getElementById("tracks").innerHTML += song;
     opt.innerHTML = song;
     opt.value = i;
     select.appendChild(opt)
