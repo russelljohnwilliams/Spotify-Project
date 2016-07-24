@@ -10,7 +10,9 @@
   <form id='search'>
     <input type="text" id="search-input" size="40" placeholder="search spotify">
     <input type="button" id="searchSpotify" value="search">
-        <select  id="songList" onchange="selectSong()">
+        <select  id="songList" onchange="selectAlbum()">
+        </select>
+        <select id="trackList" onchange="createTrack()">
         </select>
         <p id="song"></p>
       </div>
@@ -21,11 +23,16 @@
      <button id="pauseMusic">pause</button>
     <hr>
 
+
     <div id="pics" class="left">
+
       <p id="pic"></p>
+      <p id="albumTitle"></p>
       <p id="albumPic"></p></div>
-      <div id="similarArtists" class="right">
-      </div>
+
+      <div id="similarArtists" class="right"> </div>
+      <div id="tracks" class="right"> </div>
+
     </header>
     </section1>
     <section2>
@@ -33,7 +40,7 @@
 
       
    <!-- <button id="nextSong">next</button> -->
-   <hr>
+   
    <div align="center">
 
 <!-- <canvas id='main' width='600' height='400'></canvas>
