@@ -4,7 +4,7 @@ body {
 }
 
 canvas {
-  border: 3px solid black;
+  border: 3px solid 1F2124;
 }
 
 canvas{
@@ -64,6 +64,227 @@ Float Clearfix
   display: table;
   clear: both;
 }
+
+
+
+
+/* =============================
+
+cassette 
+
+============================= */
+
+#outside {
+
+  border-radius: 15px;
+  height: 500px;
+  width: 800px;
+  color: white;
+}
+
+#top-top{
+  background-color: #1F2124;
+  height: 50px;
+  border-radius: 20px 20px 0 0; 
+}
+
+#center{
+  background-color: #1F2124;
+}
+
+#label {
+  width: 700px;
+  z-index: 10;
+}
+
+#top-label {
+  padding-top: 10px;
+  background: grey;
+  height: 110px;
+  border-radius: 10px 10px 0 0;
+}
+
+#top-label h1{
+  border: 0;
+  padding: 0 0 0 10px;
+  margin: 10px 30px 0 30px;
+  height: 40px;
+  background-color: white;
+  color: black;
+  font-size: 1.8rem;
+}
+
+#middle {
+  background: grey;
+  height: 150px;
+}
+
+#left-spool {
+  background: blue;
+  display: inline-block;
+  height: 150px;
+  width: 150px;
+  background-color: #1F2124;
+}
+
+
+
+#left-spool-circle {
+  background: blue;
+  margin: 5px;
+  height: 80px;
+  width: 80px;
+  background-color: white;
+  border-radius: 100%;
+  z-index: 50;
+  color: black;
+  margin: 13px;
+  border: 21px dotted black;
+  transition: width 100s;
+  -webkit-transition-timing-function: linear;
+  transform: rotate(100deg);
+ }
+
+
+#clear-bit {
+  background: brown;
+  display: inline-block;
+  width: 200px;
+  height: 150px;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  z-index: 40;
+}
+/*--------------------------------*/
+
+
+#left-bit {
+  background: brown;
+  display: inline-block;
+  width: 40px;
+  height: 150px;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  z-index: 40;
+
+}
+
+#parent {
+  background: white;
+  height:150px;
+  width: 136px;
+  margin-left: 30px;
+
+}
+
+#left-tape {
+  
+  height:150px;
+  width: 15px;
+  /*border-radius: 0 100% 50% 0;*/
+  border-radius: 100% / 50%;
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+  background-color: brown;
+  z-index: 50;
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+#between-tape{
+  padding: 0;
+  margin: 0;
+  border: 0;
+  height:150px;
+  width: 98px;
+  display: inline-block;
+  /*background-color: white;*/
+}
+
+#right-tape {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  height:150px;
+  width: 15px;
+  /*border-radius: 50px 0 0 50px;*/
+  background-color: brown;
+  z-index: 50;
+  display: inline-block;
+      border-radius: 100% / 50%;
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+}
+
+#right-bit {
+  background: brown;
+  display: inline-block;
+  width: 30px;
+  height: 150px;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  z-index: 40;
+}
+
+/*--------------------------------*/
+
+
+#right-spool {
+  background: blue;
+  display: inline-block;
+  height: 150px;
+  width: 150px;
+  background-color: #1F2124;
+  color: black;
+
+}
+
+#right-spool-circle {
+  background: blue;
+  margin: 5px;
+  height: 80px;
+  width: 80px;
+  background-color: white;
+  border-radius: 100%;
+  z-index: 50;
+  color: black;
+  margin: 13px;
+  border: 21px dotted black;
+}
+
+
+#bottom-label {
+  background: grey;
+  height: 60px;
+  border-radius: 0 0 10px 10px; 
+}
+
+#bottom-bottom {
+  background: #1F2124;
+  position: relative;
+  height: 120px;
+  text-align: center;
+  border-radius: 0 0 20px 20px; 
+}
+
+#trapezoid {
+  border-bottom: 90px solid #383A3F;
+  border-left: 40px solid transparent;
+  border-right: 40px solid transparent;
+  height: 0;
+  width: 420px;
+  position: absolute;
+  left: 150px;
+  bottom: 0px;
+  display: table;
+}
+          
+
 
 
 

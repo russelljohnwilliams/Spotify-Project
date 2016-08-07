@@ -8,7 +8,7 @@ var main = function() {
   btn.onclick = handleClick;
 
   var form = document.getElementById( 'search' );
-  form.onsubmit = handleSubmit;
+  form
 
   var btn = document.getElementById('playMusic');
   btn.onclick = playAudio;
@@ -66,19 +66,6 @@ var searchAlbums = function(artistSearch){
   request1.send(null)
 };
 
-var getSongs = function(albums){
-  var url = albums;
-  var request1 = new XMLHttpRequest();
-  request1.open("GET", url);
-  request1.onload = function(){
-    if(request1.status === 200) {
-      var albumInfo = JSON.parse(request1.responseText)
-      album.tracks = albumInfo.tracks.items;
-      generateTrackList(albumInfo);
-    }
-  };
-  request1.send(null)
-};
 
 var relatedArtists = function(artistSearch){
   var url = artistSearch.artists.items[0].href+"/related-artists";
@@ -93,23 +80,25 @@ var relatedArtists = function(artistSearch){
   request3.send()
 };
 
+var setRelatedArtists = function(related){
+  document.getElementById("similarArtists").innerHTML = "<h3>" 
+  + "Related Artists" + "</h3>"
+  for (var i in related.artists)
+    document.getElementById("similarArtists").innerHTML  += related.artists[i].name + "<br>" 
+}
+
 var findArtist = function(){
   document.getElementById("songList").options.length = 0;
   var select = document.getElementById('songList');
   for ( var i = 0; i < state.albums.items.length; i++ ){
+
     var opt = document.createElement('option')
     opt.innerHTML = state.albums.items[i].name;
     opt.value = i;
     select.appendChild(opt)
+
     setArtistPic()
   }
-}
-
-var selectAlbum = function(){
-  var index = document.getElementById('songList').value;
-  var album = state.albums.items[index].href
-  getSongs(album)
-  setAlbumPic(index, album)
 }
 
 var setArtistPic = function(){
@@ -117,16 +106,30 @@ var setArtistPic = function(){
   + choice.artist.name + "</h1>" +'<img class="picture" src=' + choice.artist.images[1].url + '>';
 }
 
+var selectAlbum = function(){
+  var index = document.getElementById('songList').value;
+  var album = state.albums.items[index].href
+  setAlbumPic(index, album)
+  getSongs(album)
+}
+
 var setAlbumPic = function(index, album){
   document.getElementById("albumPic").innerHTML = '<img class="picture" src=' + state.albums.items[index].images[1].url + '>';
 }
 
-var setRelatedArtists = function(related){
-  document.getElementById("similarArtists").innerHTML = "<h3>" 
-  + "Related Artists" + "</h3>"
-  for (var i in related.artists)
-    document.getElementById("similarArtists").innerHTML  += related.artists[i].name + "<br>" 
-}
+var getSongs = function(albums){
+  var url = albums;
+  var request1 = new XMLHttpRequest();
+  request1.open("GET", url);
+  request1.onload = function(){
+    if(request1.status === 200) {
+      var albumInfo = JSON.parse(request1.responseText)
+      album.tracks = albumInfo.tracks.items;
+      generateTrackList(albumInfo);
+    }
+  };
+  request1.send(null)
+};
 
 var generateTrackList = function(albumInfo){
   document.getElementById("albumTitle").innerHTML = "<h3>" 
@@ -146,9 +149,24 @@ var createTrack = function() {
   var index = document.getElementById('trackList').value;
   var song = album.tracks[index].preview_url
   audio = new Audio(song)
+
+  document.getElementById("artist").innerText = "artist: " + choice.artist.name
+  document.getElementById("title").innerText = "artist: " + album.tracks[index].name
 }
 
 var audio = new Audio()
+
+var playAudio = function(){
+  audio.play();
+
+}
+
+var pauseAudio = function(){
+  audio.pause();
+  document.getElementById("artist").innerText = ""
+  document.getElementById("title").innerText = ""
+
+}
 
 var choice = {
   artist: null
@@ -160,13 +178,5 @@ var album = {
 
 var state = {
   albums: null,
-}
-
-var playAudio = function(){
-  audio.play();
-}
-
-var pauseAudio = function(){
-  audio.pause();
 }
 
