@@ -13,6 +13,7 @@ var main = function() {
   var btn = document.getElementById('playMusic');
   btn.onclick = playAudio;
 
+
   var btn = document.getElementById('pauseMusic');
   btn.onclick = pauseAudio;
 
@@ -53,6 +54,8 @@ var searchArtists = function(userInput) {
 };
 
 var searchAlbums = function(artistSearch){
+  document.getElementById("artist").innerText = ""
+  document.getElementById("title").innerText = ""
   var artist = artistSearch.artists.items[0].href;
   var url = artist + "/albums?album_type=album";
   var request1 = new XMLHttpRequest();
@@ -98,6 +101,7 @@ var findArtist = function(){
     select.appendChild(opt)
 
     setArtistPic()
+
   }
 }
 
@@ -151,20 +155,27 @@ var createTrack = function() {
   audio = new Audio(song)
 
   document.getElementById("artist").innerText = "artist: " + choice.artist.name
-  document.getElementById("title").innerText = "artist: " + album.tracks[index].name
+  document.getElementById("title").innerText = "track: " + album.tracks[index].name
 }
 
 var audio = new Audio()
 
 var playAudio = function(){
   audio.play();
-
+  console.log("YEAH!")
+  var spool = document.getElementById("leftSpoolCircle")
+  spool.style.webkitTransform = "rotateZ(-900deg)";
+  var spool = document.getElementById("rightSpoolCircle")
+  spool.style.webkitTransform = "rotateZ(-900deg)";
 }
 
 var pauseAudio = function(){
   audio.pause();
-  document.getElementById("artist").innerText = ""
-  document.getElementById("title").innerText = ""
+  style.webkitAnimationPlayState = 'paused';
+  var spool = document.getElementById("leftSpoolCircle");
+  spool.style.webkitAnimationPlayState = 'paused';
+  // document.getElementById("artist").innerText = ""
+  // document.getElementById("title").innerText = ""
 
 }
 

@@ -129,7 +129,7 @@ cassette
 
 
 
-#left-spool-circle {
+#leftSpoolCircle {
   background: blue;
   margin: 5px;
   height: 80px;
@@ -140,10 +140,12 @@ cassette
   color: black;
   margin: 13px;
   border: 21px dotted black;
-  transition: width 100s;
-  -webkit-transition-timing-function: linear;
-  transform: rotate(100deg);
+  transition: all 30s;
+  transition-timing-function: linear;
+
  }
+
+
 
 
 #clear-bit {
@@ -244,7 +246,7 @@ cassette
 
 }
 
-#right-spool-circle {
+#rightSpoolCircle {
   background: blue;
   margin: 5px;
   height: 80px;
@@ -255,6 +257,8 @@ cassette
   color: black;
   margin: 13px;
   border: 21px dotted black;
+  transition: all 30s;
+  transition-timing-function: linear;
 }
 
 
