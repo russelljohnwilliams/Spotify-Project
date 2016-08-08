@@ -106,8 +106,8 @@ var findArtist = function(){
 }
 
 var setArtistPic = function(){
-  document.getElementById("pic").innerHTML = "<h1>"
-  + choice.artist.name + "</h1>" +'<img class="picture" src=' + choice.artist.images[1].url + '>';
+  document.getElementById("pic").innerHTML = "<h3>"
+  + choice.artist.name + "</h3>" +'<img class="picture" src=' + choice.artist.images[1].url + '>';
 }
 
 var selectAlbum = function(){
