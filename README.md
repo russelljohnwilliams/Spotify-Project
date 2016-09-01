@@ -2,6 +2,7 @@
 
 created a spotify web app which allows user to look up an artists albums and tracks and listen to a 30 second sample.
 
+https://cloud.githubusercontent.com/assets/18755619/18165239/0ae503be-703c-11e6-9bcf-7daa39483a6f.png
 
 
 * Use the search box and type in an artist name.
