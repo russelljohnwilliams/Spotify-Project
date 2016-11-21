@@ -13,7 +13,6 @@ var main = function() {
   var btn = document.getElementById('playMusic');
   btn.onclick = playAudio;
 
-
   var btn = document.getElementById('pauseMusic');
   btn.onclick = pauseAudio;
 
@@ -94,7 +93,6 @@ var findArtist = function(){
   document.getElementById("songList").options.length = 0;
   var select = document.getElementById('songList');
   for ( var i = 0; i < state.albums.items.length; i++ ){
-
     var opt = document.createElement('option')
     opt.innerHTML = state.albums.items[i].name;
     opt.value = i;
