@@ -152,8 +152,12 @@ var createTrack = function() {
   var song = album.tracks[index].preview_url
   audio = new Audio(song)
 
+  var str = album.tracks[index].name
+  var string = str.substring(0,25) +"...";
+  console.log("String-a-ding", string)
+
   document.getElementById("artist").innerText = "artist: " + choice.artist.name
-  document.getElementById("title").innerText = "track: " + album.tracks[index].name
+  document.getElementById("title").innerText = "track: " + string
 }
 
 var audio = new Audio()
