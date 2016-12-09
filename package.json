@@ -1,0 +1,24 @@
+{
+  "name": "spotify",
+  "version": "1.0.0",
+  "description": "created a spotify web app which allows user to look up an artists albums and tracks and listen to a 30 second sample.",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.13.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/russelljohnwilliams/week-7-day-5-homework.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/russelljohnwilliams/week-7-day-5-homework/issues"
+  },
+  "homepage": "https://github.com/russelljohnwilliams/week-7-day-5-homework#readme"
+}
