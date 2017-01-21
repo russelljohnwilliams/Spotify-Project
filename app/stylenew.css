@@ -1,0 +1,454 @@
+
+/* =============================
+
+  Main
+
+============================= */
+
+html{
+  font-size: 14px;
+  background-color: whitesmoke;
+}
+
+img{
+  height: 4rem;
+  width: 4rem; 
+  margin: 0;
+  border: solid 0.3rem white;
+  border-radius: 100%;
+}
+
+/* =============================
+
+  Floated Columns 
+
+============================= */
+
+.form{
+  float: left;
+  width: 23%;
+  text-align: center;
+}
+
+.cassette {
+  padding: 2rem 0 0 0;
+  float: left;
+  width:70%;
+}
+
+
+/* =============================
+
+  Float Clearfix 
+
+============================= */
+
+/*.group:after {
+  content: "";
+  display: table;
+  clear: both;
+}*/
+
+/* =============================
+
+  Cassette 
+
+============================= */
+
+#outside {
+  border-radius: 0.9375rem;
+  height: 31.25rem;
+  width: 50rem;
+  color: white;
+  margin: auto;
+}
+
+#top-top{
+  background-color: #3C3530;
+  height: 3.125rem;
+  border-radius: 2.5rem 2.5rem 0 0; 
+}
+
+.circle-left, .circle-right{
+  float: left;
+  z-index: 100;
+  background-color: black;
+  padding: 0;
+  margin: 1.5rem;
+  border: 0;
+  height: 1.5625rem; 
+  width: 1.5625rem;
+  border-radius: 6.25rem;
+}
+
+.circle-right{
+  float: right;
+}
+
+#center{
+  background-color: #3C3530;
+}
+
+#label {
+  width: 43.75rem;
+  z-index: 10;
+}
+
+#top-label {
+  padding-top: 0.625rem;
+  background: #C5C6B6;
+  height: 6.875rem;
+  border-radius: 2rem 2rem 0 0;
+}
+
+#middle {
+  background: #C5C6B6;
+  height: 9.375rem;
+}
+
+#left-spool, #right-spool {
+  display: inline-block;
+  height: 9.375rem;
+  width: 9.375rem;
+  background-color: #3C3530;
+  border-radius: 0.2rem;
+}
+
+#leftSpoolCircle, #rightSpoolCircle {
+  margin: 0.3125rem;
+  height: 5rem;
+  width: 5rem;
+  background-color: white;
+  border-radius: 100%;
+  z-index: 50;
+  margin: 0.8125rem;
+  border: 1.3125rem dotted black;
+  transition-timing-function: linear;
+}
+
+#clear-bit {
+  background: #f15a22;
+  display: inline-block;
+  width: 12.5rem;
+  height: 9.375rem;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  z-index: 40;
+  border-radius: 0.2rem;
+}
+
+/*--------------------------------*/
+
+
+#parent {
+  background: white;
+  height: 9.375rem;
+  width:  8.5rem;
+  margin-left: 1.875rem;
+}
+
+#left-tape, #right-tape {
+  height: 9.375rem;
+  width: 0.9375rem;
+  border-radius: 40% / 100%;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  background-color: #f15a22;
+  z-index: 50;
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+#between-tape{
+  padding: 0;
+  margin: 0;
+  border: 0;
+  height: 9.375rem;
+  width: 6.125rem;
+  display: inline-block;
+}
+
+#right-tape {
+  border-radius: 40% / 100%;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+/*--------------------------------*/
+
+#bottom-label {
+  background: #C5C6B6;
+  height: 3.75rem;
+  border-radius: 0 0 2rem 2rem; 
+}
+
+#bottom-bottom {
+  background: #3C3530;
+  position: relative;
+  height: 7.5rem;
+  text-align: center;
+  border-radius: 0 0 2.5rem 2.5rem; 
+}
+
+#trapezoid {
+  border-bottom: 5.625rem solid #1e1b18;
+  border-left: 2.5rem solid transparent;
+  border-right: 2.5rem solid transparent;
+  height: 0;
+  width: 26.25rem;
+  position: absolute;
+  left: 9.375rem;
+  bottom: 0;
+}
+
+.circle-bottom-left, .circle-bottom-right{
+  float: left;
+  z-index: 100;
+  background-color: black;
+  padding: 0;
+  margin: 4.5rem 1.5rem;
+  border: 0;
+  height: 1.5625rem; 
+  width: 1.5625rem;
+  border-radius: 6.25rem;
+}
+
+.circle-bottom-right{
+  float: right;
+}
+
+/*==================
+  
+  forms
+  
+===================*/
+
+input, option, select, h4
+{
+  width: 250px;
+  height: 60px;
+  padding: 2px;
+  margin: 2rem 0 0 0;
+  border-radius:  100px;
+  background-color: mediumturquoise;
+  color: white;
+  border: none;
+  font-size: 1.3rem;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -webkit-border-radius: 100px;
+  appearance: none;
+  text-align: center;
+}
+
+select{
+  text-align-last:center;
+}
+
+input:focus, option:focus, select:focus, button:focus{
+  outline: none;
+}
+
+::-webkit-input-placeholder {
+   color: white;
+   text-align: center;
+   font-size: 1.3rem;
+}
+
+select{
+  background-image:url("/img/down-256.png");
+  background-repeat: no-repeat;
+  background-position: 90% 50%;
+  background-size: 20px;
+}
+
+h4{
+  line-height: 60px; 
+  vertical-align: middle;
+  background-color: #fcd240;
+  font-family: 'sacramento';
+  font-weight: normal;
+  font-size: 2.6rem;
+  margin: 2rem auto 0;
+}
+
+/*==================
+  
+  Buttons
+
+===================*/
+
+.button {
+  width: 250px;
+  height: 60px;
+  padding: 2px;
+  margin: 2rem 0 0 0;
+  border-radius:  100px;
+  background-color: orangered;
+  font-size: 1.3rem;
+  color: white;
+  border: none;
+}
+
+.play{
+  background-image:url("/img/play-256.png");
+}
+
+.pause{
+  background-image:url("/img/pause-256.png");
+}
+
+.play, .pause{
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: 40px;
+  width: 80px;
+  height: 80px;
+  margin: 3.5rem 2rem 0 2rem;
+}
+
+/*==================
+
+  Labels
+
+===================*/
+
+#artist, #title{
+  font-family: 'Dawning of a New Day', cursive;
+  font-family: 'nothing you could do', cursive;
+  /*font-family: 'homemade apple', cursive;*/
+  /*font-family: 'waiting for the sunrise', cursive;*/
+  padding: 0 0 0.2rem 1.25rem;
+  box-shadow: 0 0.4375rem 0 0 white;
+  border: 0;
+  border-bottom: 0.2rem dotted red;
+  margin: 0.25rem 3.75rem 1.25rem 3.75rem;
+  height: 1.4375rem;
+  background-color: white;
+  color: black;
+  font-size: 1.5rem;
+  border-radius: 0.2rem;
+  position: relative;
+}
+
+.artist-pic{
+  display: inline-block;
+  width: 220px;
+  height: 4.5rem;
+  padding: 8px;
+  margin: 20px;
+  border-radius:  100px;
+  background-color: #6ad36d;
+  color: white;
+  border: none;
+  font-size: 1.4rem;
+}
+
+
+/*#albumPic{
+  width: 220px;
+  height: 60px;
+  padding: 2px;
+  margin: 20px;
+  border-radius:  100px;
+  background-color: #6ad36d;
+  color: white;
+  border: none;
+  font-size: 20px;
+  text-align: center;
+}*/
+
+
+
+/* =============================
+
+  Media Queries
+
+============================= */
+
+@media only screen and (max-width: 1024px) {
+
+  html{
+    font-size: 11px;
+  }
+  
+  h4, .input, .button{
+    height: 50px;
+    width: 180px;
+    /*font-size: 1.2rem;*/
+  }
+
+  .play, .pause{
+    width: 50px;
+    background-size: 25px;
+    margin: 10px;
+  }
+}
+
+
+@media only screen and (max-width: 810px) {
+
+  html{
+    font-size: 9px;
+  }
+  
+  h4, .input, .button{
+    height: 50px;
+    width: 180px;
+    /*font-size: 1.6rem;*/
+  }
+
+  .play, .pause{
+    width: 50px;
+    background-size: 25px;
+  }
+}
+
+@media only screen and (max-width: 570px) {
+
+  html{
+    font-size: 7px;
+  }
+  
+  h4, .input, .button{
+    height: 40px;
+    width: 250px;
+    font-size: 2.5rem;
+    margin: 5px auto;
+  }
+
+  ::-webkit-input-placeholder {
+     font-size: 2.5rem;
+  }
+
+  h4{
+    height: 50px;
+    font-size: 4.5rem;
+  }
+
+  .play, .pause{
+    width: 50px;
+    height: 50px;
+    background-size: 25px;
+    margin: 5px;
+  }
+
+  .form{
+    width: 100%;
+    /*text-align: center;*/
+  }
+
+  .cassette {
+    width:100%;
+    margin: 0;
+  }
+}
+
+
+
+
+
+

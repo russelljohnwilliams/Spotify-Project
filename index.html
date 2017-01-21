@@ -1,113 +1,101 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>Spotify!</title>
-  <script src='index.js'></script>
-  <link rel="stylesheet" href="/style.css">
-  <link href="https://fonts.googleapis.com/css?family=Nothing+You+Could+Do|Reenie+Beanie|Shadows+Into+Light|Shadows+Into+Light+Two" rel="stylesheet">
-</head>
-<body>
-  <section1>
-    <form id='search'>
-      <input type="text" id="search-input" class="input" size="40" placeholder="enter an artist name">
-      <input type="button" id="searchSpotify" class="button" value="search">
-      <select  id="songList" class="input" >
-      </select>
-      <select id="trackList" class="input">
-      </select>
-      <p id="song"></p>
-    </div>
-    <hr>
-  </form>
-  <div id="playButton">
-    <button id="playMusic" class="button">play</button>
-    <button id="pauseMusic" class="button">pause</button>
-    <hr>
+  <html>
+    <head>
+      <title>Spotify!</title>
+      <script src='index.js'></script>
+      <link rel="stylesheet" href="/stylenew.css">
+      <link href="https://fonts.googleapis.com/css?family=Dawning+of+a+New+Day|Homemade+Apple|Nothing+You+Could+Do|Waiting+for+the+Sunrise|Zeyada|Sacramento" rel="stylesheet">
 
-      </header>
-    </section1>
-
-
-
-
-
-
-
-<section3>
-<div class="left">
-  <div id="outside" align="center">
-    <div id="top-top">
+    </head>
+    <body>
       
-      <div class="circle-left"></div>
-      <div class="circle-right"/></div>
-    </div>
-    <div id="center">
-      <div id="label">
+        <div class="form">
+        <h4>Sputtify</h4>
+          <form id='search'>
+            <input type="text" id="search-input" class="input" size="40" placeholder="search an artist here">
+            <input type="button" id="searchSpotify" class="button" value="click to search">
+            <select  id="album" class="input" >
+            </select>
+            <select id="trackList" class="input">
+            </select>
+            <p id="song"></p>
+        </form>
+        
+          <button id="playMusic" class="button play"></button>
+          <button id="pauseMusic" class="button pause"></button>
+        </div>
 
-      <div id="top-label" align="left"><h1 id="artist"></h1><h1 id="title"></h1></div>
 
-        <div id="middle">
+    
+    <div class="cassette">
+      <div id="outside" align="center">
+        <div id="top-top">
+          <div class="circle-left"></div>
+          <div class="circle-right"/></div>
+        </div>
+        <div id="center">
+          <div id="label">
 
-          <div id="left-spool">
-            <div id="leftSpoolCircle" class="spin "></div>
-          </div>
+          <div id="top-label" align="left"><h1 id="artist"></h1><h1 id="title"></h1></div>
 
-          <div id="clear-bit">
-            <!-- <div id="left-bit"></div> -->
-            <div id="parent">
-              <div id="left-tape"></div>
-              <div id="between-tape"></div>
-              <div id="right-tape"></div>
+            <div id="middle">
 
-              <!-- <div id="right-bit"></div> -->
+              <div id="left-spool">
+                <div id="leftSpoolCircle" class="spin "></div>
+              </div>
+
+              <div id="clear-bit">
+                <div id="parent">
+                  <div id="left-tape"></div>
+                  <div id="between-tape"></div>
+                  <div id="right-tape"></div>
+
+                </div>
+              </div>
+
+              <div id="right-spool">
+                <div id="rightSpoolCircle"></div>
+              </div>
+
             </div>
-          </div>
 
-          <div id="right-spool">
-            <div id="rightSpoolCircle"></div>
+            <div id="bottom-label"></div>
           </div>
 
         </div>
-
-        <div id="bottom-label"></div>
+        <div id="bottom-bottom">
+        <div class="circle-bottom-left"></div>
+          <div id="trapezoid"></div>
+        <div class="circle-bottom-right"/></div>
+        </div>
       </div>
+          <div id="pics" class="pics">
 
+            <div id="pic"></div>
+            <div id="albumTitle"></div>
+            <div id="albumPic"></div>
+            <div id="tracks"> </div>
+            <div id="similarArtists"> </div>
+      </div>
     </div>
-    <div id="bottom-bottom">
-    <div class="circle-bottom-left"></div>
-      <div id="trapezoid"></div>
-    <div class="circle-bottom-right"/></div>
+
+
+       
+    
+
+      
+        <div id="results"></div>
+
+
+          <!-- <button id="nextSong">next</button> -->
+
+          <div align="center">
+
+    <!-- <canvas id='main' width='600' height='400'></canvas>
+    <div align="center">
+    </div><br> -->
     </div>
-  </div>
-
-</div>
 
 
-</section3>
-<section4>
-<div id="pics" class="right">
-
-  <p id="pic"></p>
-  <p id="albumTitle"></p>
-  <p id="albumPic"></p></div>
-  <div id="tracks"> </div>
-  <div id="similarArtists"> </div>
-</section4>
-
-  <section2>
-    <div id="results">
-
-
-      <!-- <button id="nextSong">next</button> -->
-
-      <div align="center">
-
-<!-- <canvas id='main' width='600' height='400'></canvas>
-<div align="center">
-</div><br> -->
-</div>
-</section2>
-
-
-</body>
-</html>
+    </body>
+  </html>

@@ -1,0 +1,406 @@
+/*
+body {
+margin: 0;
+}
+
+canvas {
+border: 3px solid 1F2124;
+}
+
+canvas{
+border: 1px 
+solid #bbb;
+}*/
+
+/* =============================
+
+Main
+
+============================= */
+body {
+  background: #94c2d1;
+
+}
+
+section{
+  padding: 400px;
+  min-width: 100%
+}
+
+img{
+  height: 120px;
+  width: 120px; 
+  margin: 0;
+  border-radius: 100%;
+}
+
+p { 
+  max-height:175px;
+  max-width: 175px;
+  margin: 0;
+  display: inline;
+
+}
+
+
+/*
+#pics {
+width: 300px;
+}*/
+
+
+/* =============================
+
+Floated Columns 
+
+============================= */
+
+.left {
+  float: left;
+  width:67%;
+}
+
+.right {
+  float: right;
+  width: 33%;
+  height: 500px;
+}
+
+/* =============================
+
+Float Clearfix 
+
+============================= */
+
+.group:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
+
+
+/* =============================
+
+cassette 
+
+============================= */
+
+#outside {
+
+  border-radius: 15px;
+  /*height: 1000vh;*/
+  width: 62.5vw;
+  color: white;
+}
+
+#top-top{
+  background-color: #1F2124;
+  height: 7.5vh;
+  border-radius: 30px 30px 0 0; 
+}
+
+.circle-left, .circle-right{
+
+  float: left;
+  z-index: 100;
+  background-color: black;
+  padding: 0;
+  margin: 2.8vh 1.8vw;
+  border: 0;
+  height: 4vh; 
+  width: 2vw;
+  border-radius: 100px;
+}
+
+.circle-right{
+  float: right;
+}
+
+#center{
+  background-color: #1F2124;
+}
+
+#label {
+  width: 700px;
+  z-index: 10;
+  
+}
+
+#top-label {
+  padding-top: 10px;
+  background: grey;
+  height: 110px;
+  border-radius: 10px 10px 0 0;
+}
+
+/*#top-label h1{
+  border: 0;
+  padding: 0 0 0 10px;
+  margin: 10px 30px 0 30px;
+  height: 40px;
+  background-color: white;
+  color: black;
+  font-size: 1.8rem;
+}*/
+
+#middle {
+  background: grey;
+  height: 150px;
+}
+
+#left-spool {
+  background: blue;
+  display: inline-block;
+  height: 150px;
+  width: 150px;
+  background-color: #1F2124;
+}
+
+#leftSpoolCircle {
+  background: blue;
+  margin: 5px;
+  height: 80px;
+  width: 80px;
+  background-color: white;
+  border-radius: 100%;
+  z-index: 50;
+  color: black;
+  margin: 13px;
+  border: 21px dotted black;
+  transition: all 30s;
+  transition-timing-function: linear;
+}
+
+#clear-bit {
+  background: brown;
+  display: inline-block;
+  width: 200px;
+  height: 150px;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  z-index: 40;
+}
+/*--------------------------------*/
+
+
+#left-bit {
+  background: brown;
+  display: inline-block;
+  width: 40px;
+  height: 150px;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  z-index: 40;
+
+}
+
+#parent {
+  background: white;
+  height:150px;
+  width: 136px;
+  margin-left: 30px;
+
+}
+
+#left-tape {
+
+  height:150px;
+  width: 15px;
+  /*border-radius: 0 100% 50% 0;*/
+  border-radius: 50% / 60%;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  background-color: brown;
+  z-index: 50;
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+#between-tape{
+  padding: 0;
+  margin: 0;
+  border: 0;
+  height:150px;
+  width: 98px;
+  display: inline-block;
+  /*background-color: white;*/
+}
+
+#right-tape {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  height:150px;
+  width: 15px;
+  /*border-radius: 50px 0 0 50px;*/
+  background-color: brown;
+  z-index: 50;
+  display: inline-block;
+  border-radius: 50% / 60%;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+#right-bit {
+  background: brown;
+  display: inline-block;
+  width: 30px;
+  height: 150px;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  z-index: 40;
+}
+
+/*--------------------------------*/
+
+
+#right-spool {
+  background: blue;
+  display: inline-block;
+  height: 150px;
+  width: 150px;
+  background-color: #1F2124;
+  color: black;
+
+}
+
+#rightSpoolCircle {
+  background: blue;
+  margin: 5px;
+  height: 80px;
+  width: 80px;
+  background-color: white;
+  border-radius: 100%;
+  z-index: 50;
+  color: black;
+  margin: 13px;
+  border: 21px dotted black;
+  transition: all 30s;
+  transition-timing-function: linear;
+}
+
+
+#bottom-label {
+  background: grey;
+  height: 60px;
+  border-radius: 0 0 10px 10px; 
+}
+
+#bottom-bottom {
+  background: #1F2124;
+  position: relative;
+  height: 120px;
+  text-align: center;
+  border-radius: 0 0 20px 20px; 
+}
+
+#trapezoid {
+  border-bottom: 90px solid #383A3F;
+  border-left: 40px solid transparent;
+  border-right: 40px solid transparent;
+  height: 0;
+  width: 420px;
+  position: absolute;
+  left: 150px;
+  bottom: 0px;
+}
+
+.circle-bottom-left, .circle-bottom-right{
+
+  float: left;
+  z-index: 100;
+  background-color: black;
+  padding: 0;
+  margin: 80px 17px 17px 17px;
+  border: 0;
+  height: 25px; 
+  width: 25px;
+  border-radius: 100px;
+}
+
+.circle-bottom-right{
+  float: right;
+}
+
+/*==================
+FORMS
+===================*/
+
+::-webkit-input-placeholder { color:#000; }
+
+.input
+{
+  width: 15%;
+  height: 37px;
+  padding: 12px 20px;
+  margin: 8px 7px;
+  border-radius: 5px;
+  box-sizing: border-box;
+  border: 1px solid black;
+  background-color: grey;
+}
+
+input[type=number]
+{
+  width: 15%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  border: 1px solid black;
+  border-radius: 5px;
+  box-sizing: border-box;
+  background-color: grey;
+}
+
+/*==================
+BUTTONS
+===================*/
+
+.button {
+  display: inline-block;
+  border-radius: 5px;
+  background-color: grey;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 11px;
+  padding: 11px;
+  width: 110px;
+  margin: 3px;
+  border: 1px solid black;
+
+}
+
+
+/*==================
+Labels
+===================*/
+
+#artist, #title{
+  font-family: 'Reenie Beanie', cursive;
+  padding: 8px 0 0 20px;
+  font-size: 15px;
+  /*border-radius: 5px;*/
+  /*box-shadow: inset 0px -3px 0px -1px rgba(0,0,0,0.75);*/
+  box-shadow: 0px 7px 0px 0px white;
+  border: 0;
+  border-bottom: 2px dotted gold;
+  margin: 4px 60px 20px 60px;
+  height: 23px;
+  background-color: white;
+  color: black;
+  font-size: 1.8rem;
+}
+
+
+
+
+
+
+
+
