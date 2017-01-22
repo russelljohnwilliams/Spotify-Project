@@ -204,10 +204,10 @@ var playAudio = function(){
   audio.play();
   console.log("YEAH!")
   var spool = document.getElementById("leftSpoolCircle")
-  document.getElementById("leftSpoolCircle").style.transition = "all 30s, linear";
+  document.getElementById("leftSpoolCircle").style.webkitTransition = "all 30s, linear";
   spool.style.webkitTransform = "rotateZ(-900deg)";
   var spool = document.getElementById("rightSpoolCircle")
-  document.getElementById("rightSpoolCircle").style.transition = "all 30s, linear";
+  document.getElementById("rightSpoolCircle").style.webkitTransition = "all 30s, linear";
   spool.style.webkitTransform = "rotateZ(-900deg)";
 }
 
