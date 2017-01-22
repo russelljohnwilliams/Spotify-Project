@@ -107,7 +107,7 @@ var generateAlbums = function(){
     var opt = document.createElement('option')
     album = state.albums.items[i].name;
     album = album.substring(0,18);
-    console.log("opt:", album)
+    // console.log("opt:", album)
     opt.className="opt";
     opt.innerHTML = album;
     opt.value = i;
@@ -129,8 +129,8 @@ var generateAlbums = function(){
 }
 
 var setArtistPic = function(){
-  document.getElementById("pic").innerHTML = "<h3>"
-  + state.artist.name + "</h3>" +'<img class="picture" src=' + state.artist.images[1].url + '>';
+  document.getElementById("artistPic").innerHTML = '<div class="artist-pic">' +'<img class="picture" src=' + state.artist.images[1].url + '>' + "<h3>"
+  + state.artist.name.substring(0, 20) + "</h3>" +'</div>';
 }
 
 var selectAlbum = function(){
@@ -141,8 +141,10 @@ var selectAlbum = function(){
 }
 
 var setAlbumPic = function(index, album){
-  document.getElementById("albumPic").innerHTML = '<div class="artist-pic">' + '<img class="picture" src=' + state.albums.items[index].images[1].url + '>' + '</div>';
+  document.getElementById("albumPic").innerHTML = '<div class="album-pic">' + '<img class="picture" src=' + state.albums.items[index].images[1].url + '>' + "<h3>" + state.albums.items[index].name.substring(0, 20) + "</h3>" + '</div>' ;
+  // console.log('state.albums.: ' + state.albums.items[0].name )
 }
+
 
 var getSongs = function(albums){
   var url = albums;
@@ -159,8 +161,8 @@ var getSongs = function(albums){
 };
 
 var generateTrackList = function(albumInfo){
-  document.getElementById("albumTitle").innerHTML = "<h3>" 
-  + albumInfo.name + "</h3>"
+  // document.getElementById("albumTitle").innerHTML = "<h3>" 
+  // + albumInfo.name + "</h3>"
   document.getElementById("trackList").options.length = 0;
   var select = document.getElementById('trackList');
   var placeholder = document.createElement('option')
@@ -171,7 +173,6 @@ var generateTrackList = function(albumInfo){
     var opt = document.createElement('option')
     song = state.tracks[i].name;
     song = song.substring(0,18);
-    console.log("this thing : ", song)
     opt.className="opt"
     opt.innerHTML = song;
     opt.value = i;
@@ -191,7 +192,7 @@ var createTrack = function() {
 
   var str = state.tracks[index].name
   var string = str.substring(0,30);
-  console.log("String-a-ding", string)
+  // console.log("Tack title :", string)
 
   document.getElementById("artist").innerText = "artist : " + state.artist.name
   document.getElementById("title").innerText = "track : " + string

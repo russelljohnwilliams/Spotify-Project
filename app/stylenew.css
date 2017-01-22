@@ -10,19 +10,12 @@ html{
   background-color: whitesmoke;
 }
 
-img{
-  height: 4rem;
-  width: 4rem; 
-  margin: 0;
-  border: solid 0.3rem white;
-  border-radius: 100%;
-}
 
-/* =============================
+/*=============================
 
   Floated Columns 
 
-============================= */
+  ============================= */
 
 .form{
   float: left;
@@ -36,37 +29,41 @@ img{
   width:70%;
 }
 
-
-/* =============================
+/* ============================
 
   Float Clearfix 
 
-============================= */
+  ============================= */
 
-/*.group:after {
-  content: "";
-  display: table;
-  clear: both;
-}*/
+  .clearfix:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
 
-/* =============================
+/* ============================
 
   Cassette 
 
-============================= */
+  ============================= */
+
+
+/*--------------top------------------*/
+
 
 #outside {
-  border-radius: 0.9375rem;
+  border-radius: 2.5rem;
   height: 31.25rem;
   width: 50rem;
   color: white;
   margin: auto;
+  background-color: #3C3530;
 }
 
 #top-top{
-  background-color: #3C3530;
+  /*background-color: #3C3530;*/
   height: 3.125rem;
-  border-radius: 2.5rem 2.5rem 0 0; 
+  /*border-radius: 2.5rem 2.5rem 0 0; */
 }
 
 .circle-left, .circle-right{
@@ -83,10 +80,6 @@ img{
 
 .circle-right{
   float: right;
-}
-
-#center{
-  background-color: #3C3530;
 }
 
 #label {
@@ -127,7 +120,7 @@ img{
 }
 
 #clear-bit {
-  background: #f15a22;
+  background: orangered;
   display: inline-block;
   width: 12.5rem;
   height: 9.375rem;
@@ -138,7 +131,7 @@ img{
   border-radius: 0.2rem;
 }
 
-/*--------------------------------*/
+/*--------------middle------------------*/
 
 
 #parent {
@@ -154,7 +147,7 @@ img{
   border-radius: 40% / 100%;
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
-  background-color: #f15a22;
+  background-color: orangered;
   z-index: 50;
   display: inline-block;
   padding: 0;
@@ -177,7 +170,7 @@ img{
   border-bottom-right-radius: 0;
 }
 
-/*--------------------------------*/
+/*---------------bottom-----------------*/
 
 #bottom-label {
   background: #C5C6B6;
@@ -186,11 +179,11 @@ img{
 }
 
 #bottom-bottom {
-  background: #3C3530;
+  /*background: #3C3530;*/
   position: relative;
   height: 7.5rem;
   text-align: center;
-  border-radius: 0 0 2.5rem 2.5rem; 
+  /*border-radius: 0 0 2.5rem 2.5rem; */
 }
 
 #trapezoid {
@@ -220,11 +213,64 @@ img{
   float: right;
 }
 
-/*==================
+/*================================
+  
+  artist and album pics
+  
+  ================================*/
+
+.artist-pic, .album-pic{
+  float: left;
+  /*display: inline-block;*/
+  width: 350px;
+  height: 75px;
+  padding: 5px;
+  margin: 0 10px 0 10px;
+  border-radius:  100px;
+  background-color: #6ad36d;
+  color: white;
+  border: none;
+  font-family: sans-serif;
+
+  font-size: 14px;
+
+  /*border: 5px solid white;*/
+}
+
+#artistPic, #albumPic{
+  /*float: left;*/
+  /*display: inline-block;*/
+  /*padding: 5px;*/
+}
+
+img{
+  height: 72px;
+  width: 72px; 
+  margin: 0;
+  border: solid 2px white;
+  border-radius: 100%;
+}
+
+h3{
+  display: inline-block;
+  /*line-height: 80px; */
+  vertical-align: middle;
+  margin: 0 0 65px 20px;
+  font-weight:normal;
+}
+
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/*================================
   
   forms
   
-===================*/
+  ================================*/
 
 input, option, select, h4
 {
@@ -266,14 +312,17 @@ select{
 }
 
 h4{
-  line-height: 60px; 
-  vertical-align: middle;
   background-color: #fcd240;
   font-family: 'sacramento';
   font-weight: normal;
   font-size: 2.6rem;
   margin: 2rem auto 0;
 }
+
+#trackList{
+  background-color: #fcd240;
+}
+
 
 /*==================
   
@@ -317,7 +366,7 @@ h4{
 ===================*/
 
 #artist, #title{
-  font-family: 'Dawning of a New Day', cursive;
+  /*font-family: 'Dawning of a New Day', cursive;*/
   font-family: 'nothing you could do', cursive;
   /*font-family: 'homemade apple', cursive;*/
   /*font-family: 'waiting for the sunrise', cursive;*/
@@ -334,32 +383,6 @@ h4{
   position: relative;
 }
 
-.artist-pic{
-  display: inline-block;
-  width: 220px;
-  height: 4.5rem;
-  padding: 8px;
-  margin: 20px;
-  border-radius:  100px;
-  background-color: #6ad36d;
-  color: white;
-  border: none;
-  font-size: 1.4rem;
-}
-
-
-/*#albumPic{
-  width: 220px;
-  height: 60px;
-  padding: 2px;
-  margin: 20px;
-  border-radius:  100px;
-  background-color: #6ad36d;
-  color: white;
-  border: none;
-  font-size: 20px;
-  text-align: center;
-}*/
 
 
 
@@ -368,8 +391,9 @@ h4{
   Media Queries
 
 ============================= */
-@media handheld, screen and (max-width: 995px)
-@media only screen and (max-width: 1024px) {
+
+
+@media handheld, screen and (max-width: 1025px){
 
   html{
     font-size: 11px;
@@ -378,16 +402,26 @@ h4{
   h4, .input, .button{
     height: 50px;
     width: 180px;
-    /*font-size: 1.2rem;*/
   }
 
   .play, .pause{
     width: 50px;
+    height: 50px;
     background-size: 25px;
     margin: 10px;
   }
-}
 
+  .artist-pic, .album-pic{
+    width: 270px;
+    height: 65px;
+    margin: 0 0 10px 15px;
+  }
+
+  img{
+    height: 62px;
+    width: 62px; 
+  }
+}
 
 @media only screen and (max-width: 810px) {
 
@@ -398,19 +432,31 @@ h4{
   h4, .input, .button{
     height: 50px;
     width: 180px;
-    /*font-size: 1.6rem;*/
+    font-size: 1.6rem;
   }
 
   .play, .pause{
     width: 50px;
+    height: 50px;
     background-size: 25px;
+  }
+
+  .artist-pic, .album-pic{
+    width: 240px;
+    height: 65px;
+    margin: 0 0 10px 15px;
+  }
+
+  img{
+    height: 62px;
+    width: 62px; 
   }
 }
 
 @media only screen and (max-width: 570px) {
 
   html{
-    font-size: 7px;
+    font-size: 6px;
   }
   
   h4, .input, .button{
@@ -445,7 +491,21 @@ h4{
     width:100%;
     margin: 0;
   }
+
+  .artist-pic, .album-pic{
+    width: 270px;
+    height: 65px;
+    margin: 0 0 10px 15px;
+  }
+
+  img{
+    height: 62px;
+    width: 62px; 
+  }
+
 }
+
+
 
 
 
