@@ -291,8 +291,11 @@ input, option, select, h4
 }
 
 select{
+  -ms-text-align-last: center;
+  -moz-text-align-last: center;
+  -webkit-text-align-last: center;
   text-align-last: center;
-  text-align-last: -webkit-center;
+
 }
 
 input:focus, option:focus, select:focus, button:focus{
